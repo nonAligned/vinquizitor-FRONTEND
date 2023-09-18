@@ -1,1 +1,18 @@
-<p>homepage works!</p>
+<div class="container" id="menu">
+    <button (click)="navigate('left')">l</button>
+    <div class="container" id="homepage-options">
+        <div class="homepage-option" id="quiz" *ngIf="activeOption=='quiz'">
+            <a href="" class="title">Take the quiz</a>
+            <p class="subtitle">Answer questions to find your perfect wine</p>
+        </div>
+        <div class="homepage-option" id="search" *ngIf="activeOption=='search'">
+            <a href="" class="title">Search manually</a>
+            <p class="subtitle">Go through our database manually to discover interensing grape varieties</p>
+        </div>
+        <div class="homepage-option" id="random" *ngIf="activeOption=='random'">
+            <a href="" class="title">Lucky guess</a>
+            <p class="subtitle">Get a random suggestion</p>
+        </div>
+    </div>
+    <button (click)="navigate('right')">r</button>
+</div>
