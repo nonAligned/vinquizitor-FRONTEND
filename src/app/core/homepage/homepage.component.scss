@@ -1,3 +1,5 @@
+@import '../../../assets/vars';
+
 .container {
     display: flex;
 }
@@ -6,17 +8,28 @@
     min-height: 100vh;
     justify-content: space-between;
     align-items: center;
-    padding: 5rem;
+    padding: 7rem;
 }
 
 .homepage-option {
     text-align: center;
+    &:hover {
+        .title {
+            color: $color-accent-purple;
+        }
+    }
     .title {
         font-weight: bold;
-        font-size: 3rem;
+        font-size: 4rem;
     }
-    .subtitle {
-        font-weight: lighter;
-        font-size: 1.1rem;
+}
+
+button {
+    border: none;
+    background-color: unset;
+    font-size: 2rem;
+    cursor: pointer;
+    &:hover {
+        color: $color-accent-purple;
     }
 }

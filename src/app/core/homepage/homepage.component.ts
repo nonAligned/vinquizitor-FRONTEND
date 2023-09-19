@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faChevronCircleRight, faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'wine-homepage',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent {
+  buttonLeft = faChevronCircleLeft;
+  buttonRight = faChevronCircleRight;
   activeOption: string = "quiz";
   options: Array<string> = ["quiz", "search", "random"];
 
