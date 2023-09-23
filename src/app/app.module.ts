@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './core/homepage/homepage.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './core/navbar/navbar.component';
+import { ContactComponent } from './core/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    NavbarComponent
+    NavbarComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
