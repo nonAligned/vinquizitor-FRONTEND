@@ -16,18 +16,19 @@
     &:hover {
         .title {
             color: $color-accent-purple;
+            transform: scale(1.15);
         }
     }
     .title {
         font-weight: bold;
-        font-size: 4rem;
+        font-size: 5rem;
     }
 }
 
 button {
     border: none;
     background-color: unset;
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
     &:hover {
         color: $color-accent-purple;

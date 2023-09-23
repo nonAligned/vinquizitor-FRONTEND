@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/vars';
 
 * {
     list-style: none;
@@ -13,6 +14,7 @@ a {
 }
 
 html {
+    color: $color-black;
     scroll-behavior: smooth;
     font-family: "Montserrat", sans-serif;
 }
