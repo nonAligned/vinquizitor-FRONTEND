@@ -1,11 +1,14 @@
-<div class="container">
+<div class="container" [ngClass]="{'navbar-collapsed':navbarCollapsed}">
     <img src="../../../assets/logo-vinquizitor.svg" id="navbar-logo" alt="Vinquizitor Logo">
     <nav id="navbar-nav">
-        <ul>
+        <ul *ngIf="!navbarCollapsed">
             <li><a routerLink="/home" routerLinkActive="link-active" class="link">home</a></li>
             <li><a routerLinkActive="link-active" class="link">quiz</a></li>
             <li><a routerLinkActive="link-active" class="link">search</a></li>
             <li><a routerLink="/contact" routerLinkActive="link-active" class="link">contact</a></li>
         </ul>
+        <button id="btn-navbar-collapse" (click)="collapseNavbar()">
+            <fa-icon [icon]="navbarCollapseButton"></fa-icon>
+        </button>
     </nav>
 </div>
