@@ -18,6 +18,7 @@ export class ContactComponent {
   }
 
   onSubmit() {
+    //TODO: add service with submit funcionality to the server
     console.log(this.message);
   }
 }
