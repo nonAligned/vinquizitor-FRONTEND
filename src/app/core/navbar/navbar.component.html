@@ -4,7 +4,7 @@
         <ul *ngIf="!navbarCollapsed">
             <li><a routerLink="/home" routerLinkActive="link-active" class="link">home</a></li>
             <li><a routerLinkActive="link-active" class="link">quiz</a></li>
-            <li><a routerLinkActive="link-active" class="link">search</a></li>
+            <li><a routerLink="/search" routerLinkActive="link-active" class="link">search</a></li>
             <li><a routerLink="/contact" routerLinkActive="link-active" class="link">contact</a></li>
         </ul>
         <button id="btn-navbar-collapse" (click)="collapseNavbar()">
