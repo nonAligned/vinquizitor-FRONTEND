@@ -9,4 +9,15 @@ import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 export class ContactComponent {
   instagram = faInstagram;
   linkedin = faLinkedin;
+
+  message = {
+    name: "",
+    email: "",
+    subject: "",
+    text: ""
+  }
+
+  onSubmit() {
+    console.log(this.message);
+  }
 }

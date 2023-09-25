@@ -2,11 +2,12 @@
     <section id="contact-form">
         <div>
             <!-- <h1>CONTACT</h1> -->
-            <form action="">
-                <input type="text" placeholder="Your name">
-                <input type="email" placeholder="Your email">
-                <input type="text" placeholder="Subject">
-                <textarea name="" id="" placeholder="Your message"></textarea>
+            <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+                <input type="text" placeholder="Your name" id="name" name="name" required [(ngModel)]="message.name" #name>
+                <input type="email" placeholder="Your email" id="email" name="email" required email [(ngModel)]="message.email" #email>
+                <input type="text" placeholder="Subject" id="subject" name="subject" required [(ngModel)]="message.subject" #subject>
+                <textarea placeholder="Your message" id="text" name="text" required [(ngModel)]="message.text" #text></textarea>
+                <button type="submit" [disabled]="!contactForm.valid">Submit</button>
             </form>
         </div>
     </section>

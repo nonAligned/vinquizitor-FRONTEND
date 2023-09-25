@@ -41,6 +41,25 @@ section {
             min-height: 10rem;
             resize: vertical;
         }
+
+        button {
+            padding: 0.5rem;
+            background-color: $color-accent-purple;
+            color: $color-white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 0.5rem;
+            border: none;
+            &:hover {
+                background-color: $color-gray-light;
+                color: $color-accent-purple-light;
+            }
+        }
+
+        button:disabled {
+            color: $color-gray-dark;
+            background-color: $color-gray-light;
+        }
     }
 }
 
@@ -62,4 +81,11 @@ section {
 
 .contact-info-link {
     font-size: 6rem;
+    &:hover {
+        color: $color-accent-purple;
+    }
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 2px solid $color-accent-purple !important;
 }

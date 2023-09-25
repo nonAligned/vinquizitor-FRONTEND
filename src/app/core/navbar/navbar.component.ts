@@ -7,7 +7,7 @@ import { faArrowRight, faBars, faHamburger } from '@fortawesome/free-solid-svg-i
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  navbarCollapsed: boolean = true;
+  navbarCollapsed: boolean = false;
   navbarCollapseButton = faBars;
 
   collapseNavbar() {

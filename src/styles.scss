@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -16,9 +17,8 @@ a {
 html {
     color: $color-black;
     scroll-behavior: smooth;
-    font-family: "Montserrat", sans-serif;
 }
 
-input, textarea {font-family: "Montserrat", sans-serif;}
-textarea::placeholder {font-family: "Montserrat", sans-serif;}
-input::placeholder {font-family: "Montserrat", sans-serif;}
+// input, textarea {font-family: "Montserrat", sans-serif;}
+// textarea::placeholder {font-family: "Montserrat", sans-serif;}
+// input::placeholder {font-family: "Montserrat", sans-serif;}
