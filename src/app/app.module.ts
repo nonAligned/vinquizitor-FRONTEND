@@ -11,6 +11,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { ContactComponent } from './core/contact/contact.component';
 import { SearchComponent } from './wine/search/search.component';
 import { WineListComponent } from './wine/wine-list/wine-list.component';
+import { WineComponent } from './wine/wine-list/wine/wine.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WineListComponent } from './wine/wine-list/wine-list.component';
     NavbarComponent,
     ContactComponent,
     SearchComponent,
-    WineListComponent
+    WineListComponent,
+    WineComponent
   ],
   imports: [
     BrowserModule,
