@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './core/homepage/homepage.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { ContactComponent } from './core/contact/contact.component';
-import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './wine/search/search.component';
 import { WineListComponent } from './wine/wine-list/wine-list.component';
 
@@ -24,7 +25,8 @@ import { WineListComponent } from './wine/wine-list/wine-list.component';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
