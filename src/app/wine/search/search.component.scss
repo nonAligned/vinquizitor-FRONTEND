@@ -1,0 +1,25 @@
+@import '../../../assets/vars';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height:  100vh;
+    width: 100%;
+}
+
+#search-options {
+    padding: 9.5rem 7rem 2rem 7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+#search-results {
+    padding: 2rem 7rem 2rem 7rem;
+}
+
+.divider {
+    border: 1px solid $color-gray-dark;
+}
