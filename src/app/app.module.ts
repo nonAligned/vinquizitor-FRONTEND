@@ -9,6 +9,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { ContactComponent } from './core/contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './wine/search/search.component';
+import { WineListComponent } from './wine/wine-list/wine-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SearchComponent } from './wine/search/search.component';
     HomepageComponent,
     NavbarComponent,
     ContactComponent,
-    SearchComponent
+    SearchComponent,
+    WineListComponent
   ],
   imports: [
     BrowserModule,
