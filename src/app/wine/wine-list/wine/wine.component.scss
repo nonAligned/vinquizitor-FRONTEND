@@ -1,0 +1,53 @@
+@import '../../../../assets/vars';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    border-bottom: 1px solid $color-gray-light;
+    padding: 1rem;
+    min-height: max-content;
+    height: 10rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 2px 2px 16px rgba(0,0,0, 0.3);
+    }
+}
+
+.wine-main {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+.wine-style {
+    width: 1rem;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.wine-heading-title {
+    font-size: 2rem;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    &:hover {
+        color: $color-accent-purple;
+    }
+}
+
+.wine-heading-subtitle {
+    color: $color-gray-dark;
+}
+
+.wine-btn {
+    font-size: 1.5rem;
+    color: $color-gray-dark;
+    &:hover {
+        color: $color-accent-purple;
+    }
+}
