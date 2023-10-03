@@ -111,9 +111,6 @@ export class WineComponent {
   
       backgroundColor = backgroundColor.substring(0, backgroundColor.length-1) + ")";
     }
-
-
-    console.log(backgroundColor);
     return backgroundColor;
   }
 }

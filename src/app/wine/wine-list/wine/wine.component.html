@@ -3,7 +3,7 @@
         <div class="wine-style" [ngStyle]="{'background': styleBackgroundColor}">
         </div>
         <div class="wine-heading">
-            <a href=""><h1 class="wine-heading-title">{{wine?.name}}</h1></a>
+            <a  [routerLink]="['/search', wine?._id]"><h1 class="wine-heading-title">{{wine?.name}}</h1></a>
             <p class="wine-heading-subtitle">Some random subtitle</p>
         </div>
     </span>
