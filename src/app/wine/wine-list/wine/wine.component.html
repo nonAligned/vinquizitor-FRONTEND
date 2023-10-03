@@ -7,7 +7,7 @@
             <p class="wine-heading-subtitle">Some random subtitle</p>
         </div>
     </span>
-    <a href="" class="wine-btn">
+    <a [routerLink]="['/search', wine?._id]" class="wine-btn">
         <fa-icon [icon]="arrow"></fa-icon>
     </a>
 </div>
