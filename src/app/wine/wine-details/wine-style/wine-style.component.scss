@@ -1,0 +1,122 @@
+@import '../../../../assets/vars';
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+}
+
+.style {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    background-color: $color-gray-dark;
+}
+
+.lightRed {
+    position: relative;
+    background-color: $lightRed;
+    &:hover {
+        .tooltipText {
+            visibility: visible;
+        }
+    }
+}
+
+.mediumRed {
+    position: relative;
+    background-color: $mediumRed;
+    &:hover {
+        .tooltipText {
+            visibility: visible;
+        }
+    }
+}
+
+.fullRed {
+    position: relative;
+    background-color: $fullRed;
+    &:hover {
+        .tooltipText {
+            visibility: visible;
+        }
+    }
+}
+
+.lightWhite {
+    position: relative;
+    background-color: $lightWhite;
+    &:hover {
+        .tooltipText {
+            visibility: visible;
+        }
+    }
+}
+
+.fullWhite {
+    position: relative;
+    background-color: $fullWhite;
+    &:hover {
+        .tooltipText {
+            visibility: visible;
+        }
+    }
+}
+
+.sweetWhite {
+    position: relative;
+    background-color: $sweetWhite;
+    &:hover {
+        .tooltipText {
+            visibility: visible;
+        }
+    }
+}
+
+.rose {
+    position: relative;
+    background-color: $rose;
+    &:hover {
+        .tooltipText {
+            visibility: visible;
+        }
+    }
+}
+
+.sparkling {
+    position: relative;
+    background-color: $sparkling;
+    &:hover {
+        .tooltipText {
+            visibility: visible;
+        }
+    }
+}
+
+.dessert {
+    position: relative;
+    background-color: $dessert;
+    &:hover {
+        .tooltipText {
+            visibility: visible;
+        }
+    }
+}
+
+.tooltipText {
+    visibility: hidden;
+    min-width: 120px;
+    background-color: $color-accent-purple;
+    color: $color-white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50% ,-15%);
+    position: absolute;
+    z-index: 1;
+  }

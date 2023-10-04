@@ -13,6 +13,7 @@ import { SearchComponent } from './wine/search/search.component';
 import { WineListComponent } from './wine/wine-list/wine-list.component';
 import { WineComponent } from './wine/wine-list/wine/wine.component';
 import { WineDetailsComponent } from './wine/wine-details/wine-details.component';
+import { WineStyleComponent } from './wine/wine-details/wine-style/wine-style.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WineDetailsComponent } from './wine/wine-details/wine-details.component
     SearchComponent,
     WineListComponent,
     WineComponent,
-    WineDetailsComponent
+    WineDetailsComponent,
+    WineStyleComponent
   ],
   imports: [
     BrowserModule,
