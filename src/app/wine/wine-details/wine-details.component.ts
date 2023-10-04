@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Wine } from 'src/app/models/wine.model';
 import { WineService } from '../wine.service';
 import { ActivatedRoute } from '@angular/router';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'wine-wine-details',
@@ -10,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WineDetailsComponent {
   wine: Wine | undefined;
+  arrowDown = faChevronDown;
 
   constructor(private wineService: WineService, private route: ActivatedRoute) {
 
@@ -24,5 +26,9 @@ export class WineDetailsComponent {
         })
       }
     })
+  }
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
   }
 }

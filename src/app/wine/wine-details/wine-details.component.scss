@@ -1,0 +1,128 @@
+@import "../../../assets/_vars.scss";
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    padding: 0 7rem 2rem 7rem;
+    flex-direction: column;
+}
+
+section {
+    padding: 4rem 0 4rem 0;
+}
+
+//HEADER SECTION
+
+#wine-header {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 2rem;
+        font-size: 2rem;
+    }
+}
+
+#wine-title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-size: 4rem;
+    }
+    .subtitle {
+        font-size: 1.5rem;
+        width: 50%;
+    }
+}
+
+//DETAILS SECTION
+
+#wine-details {
+    display: flex;
+    gap: 2rem;
+    padding-top: 10rem;
+    min-height: 100vh;
+}
+
+#wine-details-right, #wine-details-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#wine-details-left {
+    flex-basis: 400px;
+    min-width: 400px;
+    .info-box {
+        width: 100%;
+    }
+}
+
+#wine-details-right {
+    flex-basis: auto;
+}
+
+#wine-photo {
+    width: 100%;
+    img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 1;
+        border-radius: 2rem;
+    }
+}
+
+#wine-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    background-color: $color-gray-light;
+    background-image: url("../../../assets/bkg-contact.png");
+    background-size: 1000px;
+    background-repeat: repeat;
+    gap: 2rem;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 16px rgba($color: $color-gray-dark, $alpha: 0.5);
+}
+
+//CLASSES
+
+.btn-shortcut {
+    border: none;
+    background-color: initial;
+    &:hover {
+        background: linear-gradient(0deg, rgba(0,0,0, 0.6), (5%, rgba(255,255,255, 0.0)));
+        color: $color-accent-purple;
+        cursor: pointer;
+    }
+}
+
+.heading {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
+
+.subtitle {
+    color: $color-gray-dark;
+}
+
+.info-box {
+    h2 {
+        margin-bottom: 0.25rem;
+    }
+    p {
+        text-align: justify;
+        font-size: 1.1rem;
+    }
+}

@@ -16,7 +16,6 @@ export class WineService {
   constructor(private http: HttpClient) { }
 
   getAllWines(): Observable<WineList> {
-
     return this.http.get<WineList>(BASE_URL+"/varieties/find").pipe(map(res => {
       return new WineList(res);
     }));

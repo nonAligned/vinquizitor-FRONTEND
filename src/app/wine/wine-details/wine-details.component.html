@@ -1,1 +1,67 @@
-<p>{{wine?.name}}</p>
+<div class="container">
+    <section id="wine-header">
+        <div id="wine-title">
+            <h1 class="heading">{{wine?.name}}</h1>
+            <p class="subtitle">Some random subtitle Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, fugit?</p>
+        </div>
+        <button class="btn-shortcut" (click)="scroll(wineDetails)"><fa-icon [icon]="arrowDown"></fa-icon></button>
+    </section>
+    <section id="wine-details" #wineDetails>
+        <div id="wine-details-left">
+            <div id="wine-photo">
+                <img src="../../../assets/uploads/wineplaceholder.jpg" alt="Photo of a {{wine?.name}}wine bottle"> 
+            </div>
+            <div id="wine-info">
+                <div class="info-box" id="wine-alt-names">
+                    <h2 class="subheading">Alternative Names</h2>
+                    <p>{{wine?.alt_names}}</p>
+                </div>
+                <div class="info-box" id="wine-styles">
+                    <h2 class="subheading">Styles</h2>
+                    <p>{{wine?.styles}}</p>
+                </div>
+                <div class="info-box" id="wine-rarity">
+                    <h2 class="subheading">Wine Rarity</h2>
+                    <p>{{wine?.rarity}}</p>
+                </div>
+                <div class="info-box" id="wine-area">
+                    <h2 class="subheading">Area Planted</h2>
+                    <p>{{wine?.area}}</p>
+                </div>
+                <div class="info-box" id="wine-producers">
+                    <h2 class="subheading">Top Producers</h2>
+                    <p>{{wine?.top_producers}}</p>
+                </div>
+                <div class="info-box" id="wine-temperature">
+                    <h2 class="subheading">Serving Temperature</h2>
+                    <p>{{wine?.serving_temperature_min}}-{{wine?.serving_temperature_min}}°C</p>
+                </div>
+                <div class="info-box" id="wine-decant">
+                    <h2 class="subheading">Decant</h2>
+                    <p><span *ngIf="wine?.decant">Yes</span><span *ngIf="!wine?.decant">No</span></p>
+                </div>
+            </div>
+        </div>
+        <div id="wine-details-right">
+            <div class="info-box" id="wine-description">
+                <h2 class="subheading">Description</h2>
+                <p>{{wine?.description}}</p>
+            </div>
+            <div class="info-box"v id="wine-food">
+                <h2 class="subheading">Food Pairing</h2>
+                <p>{{wine?.food_pairing}}</p>
+            </div>
+            <div class="info-box" id="wine-flavors">
+                <!-- PLACEHOLDER -->
+                <h2 class="subheading">Flavor Profile</h2>
+                <p>{{wine?.flavors}}</p>
+            </div>
+            <div class="info-box" id="wine-glass">
+                <!-- PLACEHOLDER -->
+                <h2 class="subheading">Which Glass?</h2>
+                <p>{{wine?.glass_serving}}</p>
+            </div>
+        </div>
+    </section>
+</div>
+
