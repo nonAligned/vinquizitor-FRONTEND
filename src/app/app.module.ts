@@ -14,6 +14,7 @@ import { WineListComponent } from './wine/wine-list/wine-list.component';
 import { WineComponent } from './wine/wine-list/wine/wine.component';
 import { WineDetailsComponent } from './wine/wine-details/wine-details.component';
 import { WineStyleComponent } from './wine/wine-details/wine-style/wine-style.component';
+import { WineGlassComponent } from './wine/wine-details/wine-glass/wine-glass.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { WineStyleComponent } from './wine/wine-details/wine-style/wine-style.co
     WineListComponent,
     WineComponent,
     WineDetailsComponent,
-    WineStyleComponent
+    WineStyleComponent,
+    WineGlassComponent
   ],
   imports: [
     BrowserModule,
