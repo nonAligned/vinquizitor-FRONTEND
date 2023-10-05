@@ -1,0 +1,19 @@
+@import '../../../../assets/vars';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 900px;
+    svg {
+        flex-basis: 150px;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.active {
+    fill: $color-accent-purple;
+}

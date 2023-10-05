@@ -59,7 +59,7 @@
             <div class="info-box" id="wine-glass">
                 <!-- PLACEHOLDER -->
                 <h2 class="subheading">Which Glass?</h2>
-                <p>{{wine?.glass_serving}}</p>
+                <wine-wine-glass [activeGlass]="wine?.glass_serving || 'universal'"></wine-wine-glass>
             </div>
         </div>
     </section>

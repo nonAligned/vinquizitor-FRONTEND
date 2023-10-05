@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'wine-wine-glass',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./wine-glass.component.scss']
 })
 export class WineGlassComponent {
+  @Input() activeGlass: string = "";
+
+  
 
 }
