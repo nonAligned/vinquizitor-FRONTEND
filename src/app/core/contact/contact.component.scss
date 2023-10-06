@@ -51,8 +51,8 @@ section {
             border-radius: 0.5rem;
             border: none;
             &:hover {
-                background-color: $color-gray-light;
-                color: $color-accent-purple-light;
+                background-color: $color-accent-purple-light;
+                cursor: pointer;
             }
         }
 
@@ -71,6 +71,7 @@ section {
     width: 30%;
     padding: 9.5rem 7rem 2rem 7rem;
     border-radius: 2rem 0 0 2rem;
+    box-shadow: 2px 2px 16px rgba($color: $color-gray-dark, $alpha: 0.5);
 }
 
 #contact-info-links {
