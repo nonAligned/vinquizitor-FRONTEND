@@ -26,7 +26,7 @@
                 </div>
                 <div class="info-box" id="wine-area">
                     <h2 class="subheading">Area Planted</h2>
-                    <p>{{wine?.area}}</p>
+                    <p>{{wine?.area}} ha</p>
                 </div>
                 <div class="info-box" id="wine-producers">
                     <h2 class="subheading">Top Producers</h2>
@@ -52,12 +52,10 @@
                 <p>{{wine?.food_pairing}}</p>
             </div>
             <div class="info-box" id="wine-flavors">
-                <!-- PLACEHOLDER -->
                 <h2 class="subheading">Flavor Profile</h2>
-                <p>{{wine?.flavors}}</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, corrupti harum vel fugiat facilis similique sed velit quis, ullam obcaecati perferendis nemo nam, eos placeat.</p>
             </div>
             <div class="info-box" id="wine-glass">
-                <!-- PLACEHOLDER -->
                 <h2 class="subheading">Which Glass?</h2>
                 <wine-wine-glass [activeGlass]="wine?.glass_serving || 'universal'"></wine-wine-glass>
             </div>
