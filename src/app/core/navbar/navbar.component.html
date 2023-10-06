@@ -1,5 +1,5 @@
 <div class="container" [ngClass]="{'navbar-collapsed':navbarCollapsed}">
-    <img src="../../../assets/logo-vinquizitor.svg" id="navbar-logo" alt="Vinquizitor Logo">
+    <img src="../../../assets/logo-vinquizitor.svg" id="navbar-logo" alt="Vinquizitor Logo" *ngIf="!navbarCollapsed">
     <nav id="navbar-nav">
         <ul *ngIf="!navbarCollapsed">
             <li><a routerLink="/home" routerLinkActive="link-active" class="link">home</a></li>

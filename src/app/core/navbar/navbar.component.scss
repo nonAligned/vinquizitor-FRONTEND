@@ -24,7 +24,9 @@
     font-size: 1.5rem;
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
     gap: 2rem;
+    min-height: 3rem;
     ul {
         display: flex;
         flex-wrap: wrap;
@@ -49,6 +51,7 @@
 .navbar-collapsed {
     width: max-content;
     padding-right: 3rem;
+    padding-left: 3rem;
 }
 
 #btn-navbar-collapse {
@@ -56,4 +59,7 @@
     border: none;
     color: $color-white;
     font-size: 2rem;
+    &:hover {
+        cursor: pointer;
+    }
 }
