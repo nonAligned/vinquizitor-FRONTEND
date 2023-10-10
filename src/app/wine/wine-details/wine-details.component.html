@@ -34,7 +34,7 @@
                 </div>
                 <div class="info-box" id="wine-temperature">
                     <h2 class="subheading">Serving Temperature</h2>
-                    <p>{{wine?.serving_temperature_min}}-{{wine?.serving_temperature_min}}°C</p>
+                    <p>{{wine?.serving_temperature}} °C</p>
                 </div>
                 <div class="info-box" id="wine-decant">
                     <h2 class="subheading">Decant</h2>
@@ -53,7 +53,7 @@
             </div>
             <div class="info-box" id="wine-flavors">
                 <h2 class="subheading">Flavor Profile</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, corrupti harum vel fugiat facilis similique sed velit quis, ullam obcaecati perferendis nemo nam, eos placeat.</p>
+                <p>{{wine?.flavors?.description}}</p>
             </div>
             <div class="info-box" id="wine-glass">
                 <h2 class="subheading">Which Glass?</h2>

@@ -10,12 +10,14 @@ export class Wine {
     acidity: number;
     regional_varieties_ids: string[];
     food_pairing: string;
-    serving_temperature_min: number;
-    serving_temperature_max: number;
+    serving_temperature: number;
     price_range: number;
     photo: string;
     decant: boolean;
-    flavors: string[];
+    flavors: {
+        list: string[],
+        description: string
+    };
     glass_serving: string;
     cellar_storage: string;
     rarity: string;
@@ -35,12 +37,11 @@ export class Wine {
         this.acidity = obj && obj.acidity || 0;
         this.regional_varieties_ids = obj && obj.regional_varieties_ids || [];
         this.food_pairing = obj && obj.food_pairing || "";
-        this.serving_temperature_min = obj && obj.serving_temperature_min || 0;
-        this.serving_temperature_max = obj && obj.serving_temperature_max || 0;
+        this.serving_temperature = obj && obj.serving_temperature || 0;
         this.price_range = obj && obj.price_range || 0;
         this.photo = obj && obj.photo || "";
         this.decant = obj && obj.decant || false;
-        this.flavors = obj && obj.flavors || [];
+        this.flavors = obj && obj.flavors || {list: [], description: ""};
         this.glass_serving = obj && obj.glass_serving || "";
         this.cellar_storage = obj && obj.cellar_storage || "";
         this.rarity = obj && obj.rarity || "";
