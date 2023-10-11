@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { WineList } from 'src/app/models/wine-list.model';
 import { WineService } from '../wine.service';
-import { Subject, debounceTime, takeUntil } from 'rxjs';
+import { Subject, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'wine-wine-list',
@@ -17,13 +17,16 @@ export class WineListComponent implements OnInit, OnChanges {
   constructor(private wineService: WineService) { }
 
   ngOnChanges() {
-    this.searchNotifier.next(true);
+    this.searchNotifier.next({"filter":this.filter,"searchString":this.searchString});
   }
 
   ngOnInit() {
     this.getAllWines();
-    this.searchNotifier.pipe(debounceTime(500))
-      .subscribe(data => this.getAllWines());
+    this.searchNotifier.pipe(debounceTime(500), distinctUntilChanged((prev: any, curr: any) => prev.filter === curr.filter && prev.searchString === curr.searchString))
+      .subscribe(data => {
+        console.log(data)
+        this.getAllWines()
+      });
   }
 
   getAllWines() {
