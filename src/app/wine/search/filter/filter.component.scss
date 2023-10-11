@@ -14,10 +14,14 @@
     color: $color-gray-dark;
     flex: 1 1 0;
     cursor: pointer;
+    &:hover:not(.active) {
+        color: $color-accent-purple;
+        border-bottom: 2px solid $color-accent-purple;
+    }
 }
 
 .active {
-    border-bottom: 4px solid $color-accent-purple;
+    border-bottom: 5px solid $color-accent-purple;
     color: $color-accent-purple;
     font-weight: bold;
 }

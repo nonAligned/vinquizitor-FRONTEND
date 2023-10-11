@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container" [routerLink]="['/search', wine?._id]">
     <span class="wine-main">
         <div class="wine-style" [ngStyle]="{'background': styleBackgroundColor}">
         </div>
         <div class="wine-heading">
-            <a  [routerLink]="['/search', wine?._id]"><h1 class="wine-heading-title">{{wine?.name}}</h1></a>
+            <a><h1 class="wine-heading-title">{{wine?.name}}</h1></a>
             <p class="wine-heading-subtitle">Some random subtitle</p>
         </div>
     </span>
-    <a [routerLink]="['/search', wine?._id]" class="wine-btn">
+    <a class="wine-btn">
         <fa-icon [icon]="arrow"></fa-icon>
     </a>
 </div>
