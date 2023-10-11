@@ -1,0 +1,8 @@
+<div class="container">
+    <button class="filter-option" [ngClass]="{'active': activeOption===''}" (click)="changeFilterOption('')">All</button>
+    <button class="filter-option" [ngClass]="{'active': activeOption==='white'}" (click)="changeFilterOption('white')">White</button>
+    <button class="filter-option" [ngClass]="{'active': activeOption==='red'}" (click)="changeFilterOption('red')">Red</button>
+    <button class="filter-option" [ngClass]="{'active': activeOption==='rosé'}" (click)="changeFilterOption('rosé')">Rosé</button>
+    <button class="filter-option" [ngClass]="{'active': activeOption==='sparkling'}" (click)="changeFilterOption('sparkling')">Sparkling</button>
+    <button class="filter-option" [ngClass]="{'active': activeOption==='dessert'}" (click)="changeFilterOption('dessert')">Dessert</button>
+</div>

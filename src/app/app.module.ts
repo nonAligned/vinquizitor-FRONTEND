@@ -16,6 +16,8 @@ import { WineDetailsComponent } from './wine/wine-details/wine-details.component
 import { WineStyleComponent } from './wine/wine-details/wine-style/wine-style.component';
 import { WineGlassComponent } from './wine/wine-details/wine-glass/wine-glass.component';
 import { WineGlassModalComponent } from './wine/wine-details/wine-glass/wine-glass-modal/wine-glass-modal.component';
+import { FilterComponent } from './wine/search/filter/filter.component';
+import { SortComponent } from './wine/search/sort/sort.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { WineGlassModalComponent } from './wine/wine-details/wine-glass/wine-gla
     WineDetailsComponent,
     WineStyleComponent,
     WineGlassComponent,
-    WineGlassModalComponent
+    WineGlassModalComponent,
+    FilterComponent,
+    SortComponent
   ],
   imports: [
     BrowserModule,

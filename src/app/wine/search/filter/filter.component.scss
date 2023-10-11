@@ -1,0 +1,23 @@
+@import "../../../../assets/vars";
+
+.container {
+    text-align: center;
+    display: flex;
+}
+
+.filter-option {
+    background-color: unset;
+    border: none;
+    border-bottom: 2px solid $color-gray-dark;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: $color-gray-dark;
+    flex: 1 1 0;
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 4px solid $color-accent-purple;
+    color: $color-accent-purple;
+    font-weight: bold;
+}

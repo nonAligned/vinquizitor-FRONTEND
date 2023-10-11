@@ -2,14 +2,16 @@
     <section id="search-options">
         <!-- TODO: implement sort and filter -->
         <div id="search-option-filter">
-            FILTER
+            <wine-filter [activeOption]="filter" (activeOptionChange)="updateFilter($event)"></wine-filter>
         </div>
-        <div class="divider"></div>
         <div id="search-option-sort">
-            SORT
+            <wine-sort></wine-sort>
         </div>
     </section>
+    <section id="search-bar">
+        <input type="text" placeholder="Search..." id="searchString" name="searchString" [(ngModel)]="searchString">
+    </section>
     <section id="search-results">
-        <wine-wine-list></wine-wine-list>
+        <wine-wine-list [filter]="filter" [searchString]="searchString"></wine-wine-list>
     </section>
 </div>

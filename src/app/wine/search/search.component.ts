@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
+  filter: string = "";
+  searchString: string = "";
+
+  updateFilter(newFilter: string) {
+    this.filter = newFilter;
+  }
 
 }
