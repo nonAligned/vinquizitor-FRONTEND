@@ -1,7 +1,10 @@
 <div class="container">
-    <select class="sort-select" name="sort" id="sort">
-        <option value="">Alphabetical</option>
-        <option value="">Price</option>
-        <option value="">Area Planted</option>
+    <select class="sort-select" name="sort" id="sort" [(ngModel)]="sort" (change)="changeSort()">
+        <option value="_id:1">Sort by</option>
+        <option value="name:1">Name A-Z</option>
+        <option value="name:-1">Name Z-A</option>
+        <option value="area:-1">Popularity</option>
+        <option value="price_range:-1">Price High-Low</option>
+        <option value="price_range:1">Price Low-High</option>
     </select>
 </div>

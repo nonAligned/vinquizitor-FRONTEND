@@ -11,20 +11,24 @@ import { Subject, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs';
 export class WineListComponent implements OnInit, OnChanges {
   @Input() filter: string | undefined;
   @Input() searchString: string | undefined;
+  @Input() sort: string | undefined;
   wines: WineList = new WineList();
   searchNotifier = new Subject();
 
   constructor(private wineService: WineService) { }
 
   ngOnChanges() {
-    this.searchNotifier.next({"filter":this.filter,"searchString":this.searchString});
+    this.searchNotifier.next({
+      "filter":this.filter,
+      "searchString":this.searchString,
+      "sort":this.sort
+    });
   }
 
   ngOnInit() {
     this.getAllWines();
-    this.searchNotifier.pipe(debounceTime(500), distinctUntilChanged((prev: any, curr: any) => prev.filter === curr.filter && prev.searchString === curr.searchString))
+    this.searchNotifier.pipe(debounceTime(500), distinctUntilChanged((prev: any, curr: any) => prev.filter === curr.filter && prev.searchString === curr.searchString && prev.sort === curr.sort))
       .subscribe(data => {
-        console.log(data)
         this.getAllWines()
       });
   }
@@ -32,7 +36,8 @@ export class WineListComponent implements OnInit, OnChanges {
   getAllWines() {
     let params = {
       "filter": this.filter || "",
-      "searchString": this.searchString || ""
+      "searchString": this.searchString || "",
+      "sort": this.sort || ""
     }
 
     this.wineService.getAllWines(params)

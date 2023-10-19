@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'wine-sort',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./sort.component.scss']
 })
 export class SortComponent {
+  sort = "_id:1";
+  @Output() sortChange = new EventEmitter();
+
+  changeSort() {
+    this.sortChange.emit(this.sort);
+  }
 
 }

@@ -8,9 +8,14 @@ import { Component } from '@angular/core';
 export class SearchComponent {
   filter: string = "";
   searchString: string = "";
+  sort: string = "";
 
   updateFilter(newFilter: string) {
     this.filter = newFilter;
+  }
+
+  updateSort(newSort: any) {
+    this.sort = newSort
   }
 
 }

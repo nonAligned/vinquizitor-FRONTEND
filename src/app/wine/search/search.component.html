@@ -5,13 +5,13 @@
             <wine-filter [activeOption]="filter" (activeOptionChange)="updateFilter($event)"></wine-filter>
         </div>
         <div id="search-option-sort">
-            <wine-sort></wine-sort>
+            <wine-sort (sortChange)="updateSort($event)"></wine-sort>
         </div>
     </section>
     <section id="search-bar">
         <input type="text" placeholder="Search..." id="searchString" name="searchString" [(ngModel)]="searchString">
     </section>
     <section id="search-results">
-        <wine-wine-list [filter]="filter" [searchString]="searchString"></wine-wine-list>
+        <wine-wine-list [filter]="filter" [searchString]="searchString" [sort]="sort"></wine-wine-list>
     </section>
 </div>
