@@ -3,6 +3,8 @@ export class Wine {
     name: string;
     alt_names: string[];
     description: string;
+    subtitle: string;
+    caption: string;
     body: number;
     alcohol: number;
     sweetness: number;
@@ -30,6 +32,8 @@ export class Wine {
         this.name = obj && obj.name || "";
         this.alt_names = obj && obj.alt_names || [];
         this.description = obj && obj.description || "";
+        this.subtitle = obj && obj.subtitle || "";
+        this.caption = obj && obj.caption || "";
         this.body = obj && obj.body || 0;
         this.alcohol = obj && obj.alcohol || 0;
         this.sweetness = obj && obj.sweetness || 0;
