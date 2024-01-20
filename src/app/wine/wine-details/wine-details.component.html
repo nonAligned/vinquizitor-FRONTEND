@@ -2,7 +2,7 @@
     <section id="wine-header">
         <div id="wine-title">
             <h1 class="heading">{{wine?.name}}</h1>
-            <p class="subtitle">{{wine?.caption}}</p>
+            <p class="subtitle"></p>
         </div>
         <button class="btn-shortcut" (click)="scroll(wineDetails)"><fa-icon [icon]="arrowDown"></fa-icon></button>
     </section>
@@ -14,7 +14,11 @@
             <div id="wine-info">
                 <div class="info-box" id="wine-alt-names">
                     <h2 class="subheading">Alternative Names</h2>
-                    <p>{{wine?.alt_names}}</p>
+                    <p>
+                        <span *ngFor="let alt of wine?.alt_names; last as isLast">
+                            {{alt}}<span *ngIf="!isLast">, </span>
+                        </span>
+                    </p>
                 </div>
                 <div class="info-box" id="wine-styles">
                     <h2 class="subheading">Styles</h2>
@@ -22,7 +26,7 @@
                 </div>
                 <div class="info-box" id="wine-rarity">
                     <h2 class="subheading">Wine Rarity</h2>
-                    <p>{{wine?.rarity}}</p>
+                    <p>{{wine?.rarity!.charAt(0).toUpperCase() + wine?.rarity!.slice(1)}}</p>
                 </div>
                 <div class="info-box" id="wine-area">
                     <h2 class="subheading">Area Planted</h2>
@@ -30,7 +34,11 @@
                 </div>
                 <div class="info-box" id="wine-producers">
                     <h2 class="subheading">Top Producers</h2>
-                    <p>{{wine?.top_producers}}</p>
+                    <p>
+                        <span *ngFor="let producer of wine?.top_producers; last as isLast">
+                            {{producer}}<span *ngIf="!isLast">, </span>
+                        </span>
+                    </p>
                 </div>
                 <div class="info-box" id="wine-temperature">
                     <h2 class="subheading">Serving Temperature</h2>
