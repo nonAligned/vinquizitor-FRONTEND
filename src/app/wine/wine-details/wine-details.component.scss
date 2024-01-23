@@ -125,4 +125,16 @@ section {
         text-align: justify;
         font-size: 1.1rem;
     }
+    span {
+        p {
+            margin-bottom: 1rem;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.linebreak {
+    white-space: pre-wrap;
 }
