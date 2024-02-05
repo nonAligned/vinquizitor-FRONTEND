@@ -3,7 +3,7 @@
         <fa-icon (click)="navigate('left')" [icon]="buttonLeft"></fa-icon>
     </button>
     <div class="container" id="homepage-options">
-        <a href="" class="homepage-option" id="quiz" *ngIf="activeOption=='quiz'">
+        <a href="" class="homepage-option" id="quiz" *ngIf="activeOption=='quiz'" routerLink="/quiz">
             <p class="title">Take the quiz</p>
         </a>
         <a href="" class="homepage-option" id="search" *ngIf="activeOption=='search'" routerLink="/search">
