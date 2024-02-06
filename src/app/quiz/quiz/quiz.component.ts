@@ -9,6 +9,7 @@ import { QuizService } from 'src/app/services/quiz.service';
 })
 export class QuizComponent implements OnInit {
   quizQuestions: QuizQuestion[] = [];
+  isQuizStarted: boolean = false;
 
   constructor(private quizService: QuizService) { }
 
@@ -23,5 +24,9 @@ export class QuizComponent implements OnInit {
       }
       console.log(this.quizQuestions);
     });
+  }
+
+  startQuiz(): void {
+    this.isQuizStarted = true;
   }
 }

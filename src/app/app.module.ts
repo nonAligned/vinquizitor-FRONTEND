@@ -19,6 +19,7 @@ import { WineGlassModalComponent } from './wine/wine-details/wine-glass/wine-gla
 import { FilterComponent } from './wine/search/filter/filter.component';
 import { SortComponent } from './wine/search/sort/sort.component';
 import { QuizComponent } from './quiz/quiz/quiz.component';
+import { QuizQuestionsComponent } from './quiz/quiz-questions/quiz-questions.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { QuizComponent } from './quiz/quiz/quiz.component';
     WineGlassModalComponent,
     FilterComponent,
     SortComponent,
-    QuizComponent
+    QuizComponent,
+    QuizQuestionsComponent
   ],
   imports: [
     BrowserModule,
