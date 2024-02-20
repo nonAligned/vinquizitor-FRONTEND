@@ -21,6 +21,7 @@ import { SortComponent } from './wine/search/sort/sort.component';
 import { QuizComponent } from './quiz/quiz/quiz.component';
 import { QuizQuestionsComponent } from './quiz/quiz-questions/quiz-questions.component';
 import { QuizQuestionComponent } from './quiz/quiz-question/quiz-question.component';
+import { QuizResultsComponent } from './quiz/quiz-results/quiz-results.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { QuizQuestionComponent } from './quiz/quiz-question/quiz-question.compon
     SortComponent,
     QuizComponent,
     QuizQuestionsComponent,
-    QuizQuestionComponent
+    QuizQuestionComponent,
+    QuizResultsComponent
   ],
   imports: [
     BrowserModule,

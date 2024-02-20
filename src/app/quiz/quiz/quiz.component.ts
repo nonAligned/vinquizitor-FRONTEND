@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizQuestion } from 'src/app/models/quiz-question.model';
+import { QuizResults } from 'src/app/models/quiz-results.model';
 import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
@@ -10,6 +11,8 @@ import { QuizService } from 'src/app/services/quiz.service';
 export class QuizComponent implements OnInit {
   quizQuestions: QuizQuestion[] = [];
   isQuizStarted: boolean = false;
+  isQuizFinished: boolean = false;
+  quizResults?: QuizResults;
 
   constructor(private quizService: QuizService) { }
 
@@ -27,5 +30,10 @@ export class QuizComponent implements OnInit {
 
   startQuiz(): void {
     this.isQuizStarted = true;
+  }
+
+  finishQuiz(newQuizResults: QuizResults): void {
+    this.quizResults = newQuizResults;
+    this.isQuizFinished = true;
   }
 }

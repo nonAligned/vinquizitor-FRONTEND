@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { QuizQuestion } from 'src/app/models/quiz-question.model';
+import { QuizResults } from 'src/app/models/quiz-results.model';
 import { UserAnswer } from 'src/app/models/user-answer.model';
 import { QuizService } from 'src/app/services/quiz.service';
 
@@ -10,6 +11,7 @@ import { QuizService } from 'src/app/services/quiz.service';
 })
 export class QuizQuestionsComponent {
   @Input() quizQuestions?: QuizQuestion[]
+  @Output() quizFinished: EventEmitter<QuizResults> = new EventEmitter();
   currentQuestion: number = 1;
   currentAnswer?: UserAnswer;
   userAnswers: UserAnswer[] = [];
@@ -73,11 +75,9 @@ export class QuizQuestionsComponent {
       "body": this.calculateAverage(bodyAnswers),
       "tannin": this.calculateAverage(tanninAnswers)
     }
-    console.log(acidityAnswers);
-    console.log(quizAnswers)
 
     this.quizService.getQuizResults(quizAnswers).subscribe(res => {
-      console.log(res);
+      this.quizFinished.emit(res);
     })
     
   }
