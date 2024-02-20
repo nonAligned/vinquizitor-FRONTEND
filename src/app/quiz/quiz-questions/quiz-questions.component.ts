@@ -73,6 +73,8 @@ export class QuizQuestionsComponent {
       "body": this.calculateAverage(bodyAnswers),
       "tannin": this.calculateAverage(tanninAnswers)
     }
+    console.log(acidityAnswers);
+    console.log(quizAnswers)
 
     this.quizService.getQuizResults(quizAnswers).subscribe(res => {
       console.log(res);

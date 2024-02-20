@@ -1,9 +1,9 @@
-import { Wine } from "./wine.model";
+import { QuizResult } from "./quiz-result.model";
 
 export class QuizResults {
-    results: Wine[];
+    results: QuizResult[];
 
     constructor (obj?: any) {
-        this.results = obj && obj.results || [];
+        this.results = obj && obj.results.map((elem: any) => new QuizResult(elem)) || [];
     }
 }
