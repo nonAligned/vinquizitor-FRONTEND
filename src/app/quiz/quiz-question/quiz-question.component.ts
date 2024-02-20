@@ -13,14 +13,11 @@ export class QuizQuestionComponent implements OnInit {
   @Input() questionNumber?: number;
   @Output() navigate: EventEmitter<any> = new EventEmitter();
   @Output() changeValue: EventEmitter<any> = new EventEmitter();
-  userAnswer?: string;
+  @Output() completeQuiz: EventEmitter<any> = new EventEmitter();
+  userAnswer?: string | number;
 
   ngOnInit() {
-    if(this.quizQuestion?.type === 'choice') {
-      this.userAnswer = "-1";
-    } else this.userAnswer = "2";
-
-    if (this.selectedAnswer !== -1) {
+    if (this.selectedAnswer) {
       this.userAnswer = String(this.selectedAnswer);
     }
   }
@@ -37,5 +34,9 @@ export class QuizQuestionComponent implements OnInit {
       property: this.quizQuestion?.property
     });
     this.changeValue.emit(userAnswer);
+  }
+
+  onComplete() {
+    this.completeQuiz.emit();
   }
 }

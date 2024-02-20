@@ -3,20 +3,23 @@
     <form *ngIf="quizQuestion?.type==='choice'" #quizFormChoice="ngForm" (change)="onValueChange()">
         <div class="answers-container">
             <div class="answer" *ngFor="let answer of quizQuestion?.answers; index as i">
-                <input type="radio" name="answer" value="{{answer.score}}" [(ngModel)]="userAnswer" required>
-                <label for="answer">{{answer.text}}</label>
+                <input type="radio" id="answer{{i}}" name="answer" value="{{answer.score}}" [(ngModel)]="userAnswer" required>
+                <label for="answer{{i}}">{{answer.text}}</label>
             </div>
         </div>
         <div class="btn-container">
             <button type="button" class="btn" (click)="onNavigate('previous')" [disabled]="questionNumber===1">Previous</button>
-            <button type="button" class="btn" (click)="onNavigate('next')" [disabled]="!quizFormChoice.valid || questionNumber===10">Next</button>
+            <button type="button" class="btn" (click)="onNavigate('next')" *ngIf="questionNumber!==10" [disabled]="!quizFormChoice.valid">Next</button>
+            <button type="button" class="btn" (click)="onComplete()" *ngIf="questionNumber===10" [disabled]="!quizFormChoice.valid">Complete</button>
         </div>
     </form>
     <form *ngIf="quizQuestion?.type==='slider'" #quizFormSlider="ngForm" (change)="onValueChange()">
-        <input type="range" min="1" max="5"  name="answer" [(ngModel)]="userAnswer" required>
+        <input type="range" min="1" max="5" name="answer" [(ngModel)]="userAnswer" required>
         <div class="btn-container">
             <button type="button" class="btn" (click)="onNavigate('previous')" [disabled]="questionNumber===1">Previous</button>
-            <button type="button" class="btn" (click)="onNavigate('next')" [disabled]="!quizFormSlider.valid || questionNumber===10">Next</button>
+            <button type="button" class="btn" (click)="onNavigate('next')" *ngIf="questionNumber!==10" [disabled]="!quizFormSlider.valid">Next</button>
+            <button type="button" class="btn" (click)="onComplete()" *ngIf="questionNumber===10" [disabled]="!quizFormSlider.valid">Complete</button>
+
         </div>
     </form>
 </div>
