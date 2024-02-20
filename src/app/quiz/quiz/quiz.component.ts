@@ -22,7 +22,6 @@ export class QuizComponent implements OnInit {
       for(let quizQuestion of quizQuestions.results) {
         this.quizQuestions.push(quizQuestion);
       }
-      console.log(this.quizQuestions);
     });
   }
 

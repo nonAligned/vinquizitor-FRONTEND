@@ -20,6 +20,7 @@ import { FilterComponent } from './wine/search/filter/filter.component';
 import { SortComponent } from './wine/search/sort/sort.component';
 import { QuizComponent } from './quiz/quiz/quiz.component';
 import { QuizQuestionsComponent } from './quiz/quiz-questions/quiz-questions.component';
+import { QuizQuestionComponent } from './quiz/quiz-question/quiz-question.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { QuizQuestionsComponent } from './quiz/quiz-questions/quiz-questions.com
     FilterComponent,
     SortComponent,
     QuizComponent,
-    QuizQuestionsComponent
+    QuizQuestionsComponent,
+    QuizQuestionComponent
   ],
   imports: [
     BrowserModule,

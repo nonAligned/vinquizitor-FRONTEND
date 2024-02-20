@@ -4,6 +4,6 @@
         <button class="btn" (click)="startQuiz()">Start</button>
     </div>
     <div class="content" id="quiz-main" *ngIf="isQuizStarted">
-        <wine-quiz-questions></wine-quiz-questions>
+        <wine-quiz-questions [quizQuestions]="quizQuestions"></wine-quiz-questions>
     </div>
 </div>
