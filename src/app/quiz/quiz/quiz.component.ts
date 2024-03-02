@@ -87,7 +87,7 @@ export class QuizComponent implements OnInit {
   }
 
   resetQuiz(): void {
-    sessionStorage.clear();
+    sessionStorage.removeItem("quizFinished");
     this.isQuizStarted = false;
     this.isQuizFinished = false;
     this.getQuizQuestions();
