@@ -7,6 +7,6 @@
         <wine-quiz-questions [quizQuestions]="quizQuestions" (quizFinished)="finishQuiz($event)"></wine-quiz-questions>
     </div>
     <div class="content" id="quiz-results" *ngIf="isQuizStarted && isQuizFinished">
-        <wine-quiz-results [quizResults]="quizResults"></wine-quiz-results>
+        <wine-quiz-results [quizResults]="quizResults" (quizReset)="resetQuiz()"></wine-quiz-results>
     </div>
 </div>

@@ -1,6 +1,14 @@
 @import '../../../assets/vars';
 
 .container {
+    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+}
+
+.cards-container {
     display: flex;
     flex-direction: row;
     gap: 5rem;
@@ -53,5 +61,27 @@
         width: 100%;
         color: $color-white;
         cursor: pointer;
+    }
+}
+
+.btn {
+    border: none;
+    background-color: $color-black;
+    color: $color-white;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    &:hover {
+        background-color: $color-accent-purple;
+        cursor: pointer;
+    }
+    &:disabled {
+        color: $color-gray-dark;
+        background-color: $color-gray-light;
+        &:hover {
+            transform: none;
+            cursor: not-allowed;
+        }
     }
 }

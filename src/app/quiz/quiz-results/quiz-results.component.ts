@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { QuizResults } from 'src/app/models/quiz-results.model';
 
 @Component({
@@ -8,5 +8,9 @@ import { QuizResults } from 'src/app/models/quiz-results.model';
 })
 export class QuizResultsComponent {
   @Input() quizResults?: QuizResults;
+  @Output() quizReset = new EventEmitter();
 
+  resetQuiz() {
+    this.quizReset.emit();
+  }
 }
