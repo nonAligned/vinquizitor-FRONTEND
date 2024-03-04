@@ -22,6 +22,7 @@ import { QuizComponent } from './quiz/quiz/quiz.component';
 import { QuizQuestionsComponent } from './quiz/quiz-questions/quiz-questions.component';
 import { QuizQuestionComponent } from './quiz/quiz-question/quiz-question.component';
 import { QuizResultsComponent } from './quiz/quiz-results/quiz-results.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { QuizResultsComponent } from './quiz/quiz-results/quiz-results.component
     QuizComponent,
     QuizQuestionsComponent,
     QuizQuestionComponent,
-    QuizResultsComponent
+    QuizResultsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
