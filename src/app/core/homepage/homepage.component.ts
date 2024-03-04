@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { faChevronCircleRight, faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'wine-homepage',
@@ -11,6 +13,8 @@ export class HomepageComponent {
   buttonRight = faChevronCircleRight;
   activeOption: string = "quiz";
   options: Array<string> = ["quiz", "search", "random"];
+
+  constructor(private quizService: QuizService, private router: Router) {}
 
   navigate(direction: string) {
     let activeOptionIndex = this.options.indexOf(this.activeOption);
@@ -27,5 +31,11 @@ export class HomepageComponent {
         this.activeOption = this.options[activeOptionIndex+1];
       }
     }
+  }
+
+  getRandom() {
+    this.quizService.getRandomResult().subscribe(randomResult => {
+      this.router.navigateByUrl(`/search/${randomResult._id}`, {skipLocationChange: true});
+    });
   }
 }

@@ -3,13 +3,13 @@
         <fa-icon (click)="navigate('left')" [icon]="buttonLeft"></fa-icon>
     </button>
     <div class="container" id="homepage-options">
-        <a href="" class="homepage-option" id="quiz" *ngIf="activeOption=='quiz'" routerLink="/quiz">
+        <a class="homepage-option" id="quiz" *ngIf="activeOption=='quiz'" routerLink="/quiz">
             <p class="title">Take the quiz</p>
         </a>
-        <a href="" class="homepage-option" id="search" *ngIf="activeOption=='search'" routerLink="/search">
+        <a class="homepage-option" id="search" *ngIf="activeOption=='search'" routerLink="/search">
             <p class="title">Search manually</p>
         </a>
-        <a href="" class="homepage-option" id="random" *ngIf="activeOption=='random'">
+        <a class="homepage-option" id="random" *ngIf="activeOption=='random'" (click)="getRandom()">
             <p class="title">Lucky guess</p>
         </a>
     </div>

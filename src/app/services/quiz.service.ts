@@ -28,7 +28,7 @@ export class QuizService {
   }
 
   getRandomResult(): Observable<Wine> {
-    return this.http.get<Wine>(BASE_URL + "varieties/random").pipe(map(data => {
+    return this.http.get<Wine>(BASE_URL + "/varieties/random").pipe(map(data => {
       return new Wine(data);
     }));
   }
