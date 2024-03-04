@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="content" id="quiz-start" *ngIf="!isQuizStarted">
+        <p>Welcome to The Vinquizitor - your gateway to personalized wine discovery!<br>In just 10 questions, unlock the perfect wine match tailored to your unique taste.<br>Whether you're a wine connoisseur or a novice, this quiz delves into your preferences, dining habits, and ambiance choices.<br><br>Click start and find the ideal wine that suits you.</p>
+        <button class="btn" (click)="startQuiz()">Start</button>
+    </div>
+    <div class="content" id="quiz-main" *ngIf="isQuizStarted && !isQuizFinished">
+        <wine-quiz-questions [quizQuestions]="quizQuestions" (quizFinished)="finishQuiz($event)"></wine-quiz-questions>
+    </div>
+    <div class="content" id="quiz-results" *ngIf="isQuizStarted && isQuizFinished">
+        <wine-quiz-results [quizResults]="quizResults" (quizReset)="resetQuiz()"></wine-quiz-results>
+    </div>
+</div>

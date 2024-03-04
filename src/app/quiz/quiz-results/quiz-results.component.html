@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="cards-container">
+        <article class="content-card">
+            <header><h1>{{quizResults?.results![1].varietyName}}</h1></header>
+            <div><p>{{quizResults?.results![1].matchPercentage}}%</p><p>Match</p></div>
+            <footer [routerLink]="['/search', quizResults?.results![1].varietyId]">Learn more</footer>
+        </article>
+        <article class="content-card">
+            <header><h1>{{quizResults?.results![0].varietyName}}</h1></header>
+            <div><p>{{quizResults?.results![0].matchPercentage}}%</p><p>Match</p></div>
+            <footer [routerLink]="['/search', quizResults?.results![0].varietyId]">Learn more</footer>
+        </article>
+        <article class="content-card">
+            <header><h1>{{quizResults?.results![2].varietyName}}</h1></header>
+            <div><p>{{quizResults?.results![2].matchPercentage}}%</p><p>Match</p></div>
+            <footer [routerLink]="['/search', quizResults?.results![2].varietyId]">Learn more</footer>
+        </article>
+    </div>
+    <button class="btn" (click)="resetQuiz()">Try again</button>
+</div>

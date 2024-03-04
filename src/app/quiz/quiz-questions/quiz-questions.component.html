@@ -1,0 +1,5 @@
+<div class="container">
+    <div *ngFor="let question of quizQuestions; index as i">
+        <wine-quiz-question [quizQuestion]="question" [selectedAnswer]="currentAnswer?.selectedAnswer" [questionNumber]="currentQuestion" (completeQuiz)="onComplete()" (changeValue)="onValueChange($event)" (navigate)="navigate($event)" *ngIf="currentQuestion===i+1"></wine-quiz-question>
+    </div>
+</div>
