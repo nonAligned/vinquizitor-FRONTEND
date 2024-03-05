@@ -9,9 +9,9 @@ import { Subject, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs';
   styleUrls: ['./wine-list.component.scss']
 })
 export class WineListComponent implements OnInit, OnChanges {
-  @Input() filter: string | undefined;
-  @Input() searchString: string | undefined;
-  @Input() sort: string | undefined;
+  @Input() filter?: string;
+  @Input() searchString?: string;
+  @Input() sort?: string;
   wines: WineList = new WineList();
   searchNotifier = new Subject();
   page = 0;
@@ -31,6 +31,12 @@ export class WineListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
+    if (sessionStorage.getItem("sort")) {
+      this.sort = sessionStorage.getItem("sort")!;
+    }
+    if (sessionStorage.getItem("filter")) {
+      this.filter = sessionStorage.getItem("filter")!;
+    }
     this.getInitialWines();
     this.searchNotifier.pipe(debounceTime(500), distinctUntilChanged((prev: any, curr: any) => prev.filter === curr.filter && prev.searchString === curr.searchString && prev.sort === curr.sort))
       .subscribe(data => {

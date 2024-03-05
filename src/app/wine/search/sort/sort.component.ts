@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,11 +6,18 @@ import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './sort.component.html',
   styleUrls: ['./sort.component.scss']
 })
-export class SortComponent {
+export class SortComponent implements OnInit {
   sort = "_id:1";
   @Output() sortChange = new EventEmitter();
 
+  ngOnInit(): void {
+    if (sessionStorage.getItem("sort")) {
+      this.sort = sessionStorage.getItem("sort")!;
+    }
+  }
+
   changeSort() {
+    sessionStorage.setItem("sort", this.sort);
     this.sortChange.emit(this.sort);
   }
 
