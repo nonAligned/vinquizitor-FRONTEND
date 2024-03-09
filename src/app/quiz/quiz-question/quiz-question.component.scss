@@ -58,3 +58,28 @@
         }
     }
 }
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        form {
+            width: 100%;
+        }
+        .answers-container {
+            gap: 2rem;
+            .answer {
+                gap: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .container {
+        .btn-container {
+            flex-wrap: wrap;
+        }
+    }
+    .btn {
+        width: 100%;
+    }
+}

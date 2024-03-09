@@ -71,6 +71,7 @@
         margin: 0;
         border-radius: 0;
         padding: 2rem;
+        gap: 2rem;
     }
 
     #navbar-nav {
@@ -81,5 +82,11 @@
     }
     #btn-navbar-collapse {
         display: none;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    #navbar-logo {
+        height: 2rem;
     }
 }
