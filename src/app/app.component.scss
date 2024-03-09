@@ -12,3 +12,9 @@ main {
 router-outlet {
     height: 100%;
 }
+
+@media only screen and (max-width: 1024px) {
+    header {
+        position: relative;
+    }
+}

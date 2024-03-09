@@ -1,4 +1,4 @@
-<div class="container" id="menu">
+<div class="container" id="menu" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')">
     <button>
         <fa-icon (click)="navigate('left')" [icon]="buttonLeft"></fa-icon>
     </button>

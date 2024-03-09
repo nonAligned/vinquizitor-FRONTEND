@@ -63,3 +63,23 @@
         cursor: pointer;
     }
 }
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+        border-radius: 0;
+        padding: 2rem;
+    }
+
+    #navbar-nav {
+        ul {
+            text-align: center;
+            flex-direction: column;
+        }
+    }
+    #btn-navbar-collapse {
+        display: none;
+    }
+}
