@@ -1,13 +1,41 @@
 <div class="container">
     <section id="contact-form">
         <div>
-            <!-- <h1>CONTACT</h1> -->
-            <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
-                <input type="text" placeholder="Your name" id="name" name="name" required [(ngModel)]="message.name" #name>
-                <input type="email" placeholder="Your email" id="email" name="email" required email [(ngModel)]="message.email" #email>
-                <input type="text" placeholder="Subject" id="subject" name="subject" required [(ngModel)]="message.subject" #subject>
-                <textarea placeholder="Your message" id="text" name="text" required [(ngModel)]="message.text" #text></textarea>
-                <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': contactForm.controls.name.invalid && (contactForm.controls.name.touched || contactForm.controls.name.dirty)}" formControlName="name" placeholder="Your name" id="name" name="name">
+                    <div *ngIf="contactForm.controls.name?.invalid && (contactForm.controls.name?.touched || contactForm.controls.name?.dirty)">
+                        <small *ngIf="contactForm.controls.name?.errors?.['required']">Name is required</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': contactForm.controls.subject.invalid && (contactForm.controls.subject.touched || contactForm.controls.subject.dirty)}" formControlName="subject" placeholder="Subject" id="subject" name="subject">
+                    <div *ngIf="contactForm.controls.subject?.invalid && (contactForm.controls.subject?.touched || contactForm.controls.subject?.dirty)">
+                        <small *ngIf="contactForm.controls.subject?.errors?.['required']">Subject is required</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': contactForm.controls.email.invalid && (contactForm.controls.email.touched || contactForm.controls.email.dirty)}" formControlName="email" placeholder="Your email" id="email" name="email">
+                    <div *ngIf="contactForm.controls.email?.invalid && (contactForm.controls.email?.touched || contactForm.controls.email?.dirty)">
+                        <small *ngIf="contactForm.controls.email?.errors?.['required']">Email is required</small>
+                        <small *ngIf="contactForm.controls.email?.errors?.['email']">Not a valid email</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea type="text" class="form-control" [ngClass]="{'is-invalid': contactForm.controls.message.invalid && (contactForm.controls.message.touched || contactForm.controls.message.dirty)}" formControlName="message" placeholder="Your message" id="message" name="message"></textarea>
+                    <div *ngIf="contactForm.controls.message?.invalid && (contactForm.controls.message?.touched || contactForm.controls.message?.dirty)">
+                        <small *ngIf="contactForm.controls.message?.errors?.['required']">Message is required</small>
+                        <small *ngIf="contactForm.controls.message?.errors?.['maxLength']">Maximum number of letters in a message is 1000</small>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="!contactForm.valid">Send message</button>
             </form>
         </div>
     </section>
@@ -20,4 +48,9 @@
             </div>
         </div>
     </section>
+</div>
+<div id="message-container" *ngIf="showMessage">
+    <div id="message-content">
+        <p>{{messageText}}</p>
+    </div>
 </div>
