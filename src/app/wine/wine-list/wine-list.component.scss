@@ -25,3 +25,16 @@ wine-wine {
         }
     }
 }
+
+@media only screen and (max-width: 1024px) {
+    wine-wine {
+        width: 100%;
+    }
+
+    .container-btn {
+        padding: 3rem 0;
+        button {
+            font-size: 1.5rem;
+        }
+    }
+}

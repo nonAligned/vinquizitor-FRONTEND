@@ -1,11 +1,14 @@
 <div class="container">
     <section id="search-options">
-        <!-- TODO: implement sort and filter -->
-        <div id="search-option-filter">
-            <wine-filter [activeOption]="filter" (activeOptionChange)="updateFilter($event)"></wine-filter>
+        <div class="option-container">
+            <div id="search-option-filter">
+                <wine-filter [activeOption]="filter" (activeOptionChange)="updateFilter($event)"></wine-filter>
+            </div>
         </div>
-        <div id="search-option-sort">
-            <wine-sort (sortChange)="updateSort($event)"></wine-sort>
+        <div class="option-container">
+            <div id="search-option-sort">
+                <wine-sort (sortChange)="updateSort($event)"></wine-sort>
+            </div>
         </div>
     </section>
     <section id="search-bar">

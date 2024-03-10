@@ -25,3 +25,16 @@
     color: $color-accent-purple;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 1024px) {
+    .filter-option {
+        flex: none;
+        width: calc(100%/3);
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .filter-option {
+        width: 50%;
+    }
+}
