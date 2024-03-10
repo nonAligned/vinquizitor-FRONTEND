@@ -16,4 +16,9 @@
     <button>
         <fa-icon (click)="navigate('right')" [icon]="buttonRight"></fa-icon>
     </button>
+    <div class="mobile">
+        <div class="indicator" [ngClass]="{'active': activeOption==='quiz'}"></div>
+        <div class="indicator" [ngClass]="{'active': activeOption==='search'}"></div>
+        <div class="indicator" [ngClass]="{'active': activeOption==='random'}"></div>
+    </div>
 </div>

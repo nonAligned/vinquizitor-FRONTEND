@@ -53,7 +53,7 @@ export class HomepageComponent {
       const duration = time - this.swipeTime!;
 
       if (duration < 1000 && Math.abs(direction[0]) > 30 && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) {
-        const swipe = direction[0] < 0 ? "left" : "right";
+        const swipe = direction[0] < 0 ? "right" : "left";
         this.navigate(swipe);
       }
     }
