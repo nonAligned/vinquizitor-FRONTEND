@@ -65,3 +65,28 @@
         color: $color-accent-purple;
     }
 }
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #modal {
+        padding: 2rem;
+        .modal-container {
+            top: 10vh;
+            left: 10vw;
+            width: 80vw;
+            height: 80vh;
+        }
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    #modal {
+        .modal-container {
+            top: 20vh;
+            height: 60vh;
+        }
+    }
+}

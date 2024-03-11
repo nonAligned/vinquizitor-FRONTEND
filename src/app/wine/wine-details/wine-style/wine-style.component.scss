@@ -14,7 +14,7 @@
     height: 1rem;
     border-radius: 100%;
     background-color: $color-gray-dark;
-    border: 2px solid $color-accent-purple;
+    // border: 2px solid $color-accent-purple;
     &:hover {
         cursor: help;
     }
@@ -123,4 +123,18 @@
     transform: translate(-50% ,-15%);
     position: absolute;
     z-index: 1;
-  }
+}
+
+@media only screen and (max-width: 860px) {
+    .container {
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .container {
+        flex-wrap: wrap;
+        height: unset;
+        justify-content: flex-start;
+    }
+}

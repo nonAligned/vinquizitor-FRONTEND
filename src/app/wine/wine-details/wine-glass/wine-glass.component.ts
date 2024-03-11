@@ -15,11 +15,15 @@ export class WineGlassComponent {
   openCloseModal(glassType?: string): void {
     
     if(glassType) {
-      this.glassType = glassType;
+      if (this.activeGlass === glassType) {
+        this.glassType = glassType;
+        this.isModalActive = true;
+      }
     } else {
       this.glassType = "";
+      this.isModalActive = false;
     }
     
-    this.isModalActive = !this.isModalActive;
+    // this.isModalActive = !this.isModalActive;
   }
 }
