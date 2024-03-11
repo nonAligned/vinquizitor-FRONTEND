@@ -2,5 +2,5 @@
     <wine-navbar></wine-navbar>
 </header>
 <main>
-    <router-outlet></router-outlet>
+    <router-outlet (activate)="onRouterActivate()" id="router"></router-outlet>
 </main>

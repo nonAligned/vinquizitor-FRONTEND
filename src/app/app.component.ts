@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'vinquizitor';
+
+  onRouterActivate(): void {
+    document.getElementById("router")?.scrollIntoView();
+  }
 }

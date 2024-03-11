@@ -31,6 +31,7 @@ section {
         justify-content: center;
         label {
             align-self: flex-start;
+            margin-bottom: 0.5rem;
         }
         input,textarea {
             padding: 0.5rem;
@@ -43,7 +44,7 @@ section {
 
         textarea {
             min-height: 10rem;
-            resize: vertical;
+            resize: none;
         }
 
         button {
@@ -125,5 +126,25 @@ section {
             max-width: 500px;
             font-size: 1.1rem;
         }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #contact-form {
+        width: 100%;
+        padding: 4rem;
+    }
+    #contact-info {
+        width: 100%;
+        border-radius: 2rem 2rem 0 0;
+        padding: 2rem;
+    }
+    #contact-info-links {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
