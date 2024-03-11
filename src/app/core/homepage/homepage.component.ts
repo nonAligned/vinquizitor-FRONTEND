@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { faChevronCircleRight, faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
@@ -9,8 +9,8 @@ import { QuizService } from 'src/app/services/quiz.service';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent {
-  buttonLeft = faChevronCircleLeft;
-  buttonRight = faChevronCircleRight;
+  buttonLeft = faChevronLeft;
+  buttonRight = faChevronRight;
   activeOption: string = "quiz";
   options: Array<string> = ["quiz", "search", "random"];
   swipeCoord?: [number, number];
