@@ -15,6 +15,7 @@ export class WineListComponent implements OnInit, OnChanges {
   wines: WineList = new WineList();
   searchNotifier = new Subject();
   page = 0;
+  limit = 10;
   isLoadMoreVisible = true;
 
   constructor(private wineService: WineService) { }
@@ -26,7 +27,8 @@ export class WineListComponent implements OnInit, OnChanges {
       "filter":this.filter,
       "searchString":this.searchString,
       "sort":this.sort,
-      "page":this.page
+      "page":this.page,
+      "limit":this.limit
     });
   }
 
@@ -36,6 +38,9 @@ export class WineListComponent implements OnInit, OnChanges {
     }
     if (sessionStorage.getItem("filter")) {
       this.filter = sessionStorage.getItem("filter")!;
+    }
+    if (sessionStorage.getItem("query")) {
+      this.searchString = sessionStorage.getItem("query")!;
     }
     this.getInitialWines();
     this.searchNotifier.pipe(debounceTime(500), distinctUntilChanged((prev: any, curr: any) => prev.filter === curr.filter && prev.searchString === curr.searchString && prev.sort === curr.sort))
@@ -49,7 +54,8 @@ export class WineListComponent implements OnInit, OnChanges {
       "filter": this.filter || "",
       "searchString": this.searchString || "",
       "sort": this.sort || "",
-      "page": this.page
+      "page": this.page,
+      "limit": this.limit
     }
 
     this.wineService.getAllWines(params)
@@ -57,7 +63,7 @@ export class WineListComponent implements OnInit, OnChanges {
       .subscribe(res => {
        let newWineList: WineList = new WineList(res);
        this.wines = newWineList;
-       if (this.wines.itemsFound < 10) {
+       if (this.wines.itemsFound < this.limit) {
          this.isLoadMoreVisible = false;
        } else {
         this.isLoadMoreVisible = true;
@@ -70,7 +76,8 @@ export class WineListComponent implements OnInit, OnChanges {
       "filter": this.filter || "",
       "searchString": this.searchString || "",
       "sort": this.sort || "",
-      "page": this.page || 1
+      "page": this.page || 1,
+      "limit": this.limit
     }
 
     this.wineService.getAllWines(params)
@@ -81,7 +88,7 @@ export class WineListComponent implements OnInit, OnChanges {
          for (let wine of newWineList.results) {
            this.wines.results.push(wine);
          }
-         if (newWineList.itemsFound < 10) {
+         if (newWineList.itemsFound < this.limit) {
           this.isLoadMoreVisible = false;
          }
        } else {

@@ -25,6 +25,7 @@
 
 #search-bar {
     padding: 0rem 7rem 2rem 7rem;
+    position: relative;
     input {
         width: 100%;
         padding: 1rem 2rem;
@@ -32,6 +33,16 @@
         background-color: $color-gray-light;
         font-size: 1.2rem;
         border-radius: 2rem;
+    }
+    fa-icon {
+        position: absolute;
+        right: 9rem;
+        margin-top: 1.25rem;
+        color: $color-gray-dark;
+        &:hover {
+            color: $color-black;
+            cursor: pointer;
+        }
     }
 }
 
@@ -58,5 +69,10 @@
         }
         -ms-overflow-style: none;
         scrollbar-width: none;
+    }
+    #search-bar {
+        fa-icon {
+            right: 4rem;
+        }
     }
 }

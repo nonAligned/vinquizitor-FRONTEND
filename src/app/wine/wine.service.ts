@@ -25,6 +25,7 @@ export class WineService {
           .set("searchString", params.searchString && params.searchString.toString() || '')
           .set("sort", params.sort || '_id:1')
           .set("page", params.page || 0)
+          .set("limit", params.limit || 10)
       }
     }
 
