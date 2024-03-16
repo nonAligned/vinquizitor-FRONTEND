@@ -9,7 +9,8 @@
     <section id="wine-details" #wineDetails>
         <div id="wine-details-left">
             <div id="wine-photo">
-                <img src="{{api}}{{wine?.photo}}" alt="Photo of a {{wine?.name}} grape"> 
+                <img *ngIf="wine?.photo" src="{{api}}{{wine?.photo}}" onerror="this.src='../../../assets/images/placeholder-variety.png'" alt="Photo of a {{wine?.name}} grape"> 
+                <img *ngIf="!wine?.photo" src="../../../assets/images/placeholder-variety.png" alt="Placeholder image"> 
             </div>
             <div id="wine-info">
                 <div class="info-box" id="wine-alt-names">

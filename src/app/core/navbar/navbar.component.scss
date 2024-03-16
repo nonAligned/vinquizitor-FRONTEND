@@ -1,4 +1,4 @@
-@import '../../../assets/vars';
+@import '../../../assets/styles/vars';
 
 .container {
     display: flex;
@@ -10,7 +10,7 @@
     box-shadow: 2px 2px 16px rgba($color: $color-accent-purple, $alpha: 0.5);
     border-radius: 4rem;
     background-color: $color-accent-purple;
-    background-image: url('../../../assets/bkg-nav-2.png');
+    background-image: url('../../../assets/images/bkg-nav-2.png');
     background-size: 1000px;
     background-repeat: repeat;
     gap: 3rem;

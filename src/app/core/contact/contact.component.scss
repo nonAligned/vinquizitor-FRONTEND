@@ -1,4 +1,4 @@
-@import "../../../assets/vars";
+@import "../../../assets/styles/vars";
 
 .container {
     display: flex;
@@ -71,7 +71,7 @@ section {
 
 #contact-info {
     background-color: $color-gray-light;
-    background-image: url("../../../assets/bkg-contact.png");
+    background-image: url("../../../assets/images/bkg-contact.png");
     background-size: 2000px;
     background-repeat: repeat;
     width: 30%;
