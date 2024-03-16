@@ -3,6 +3,7 @@ import { Wine } from 'src/app/models/wine.model';
 import { WineService } from '../wine.service';
 import { ActivatedRoute } from '@angular/router';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'wine-wine-details',
@@ -12,6 +13,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 export class WineDetailsComponent {
   wine: Wine | undefined;
   arrowDown = faChevronDown;
+  api = environment.apiKey;
 
   constructor(private wineService: WineService, private route: ActivatedRoute) {
 
@@ -23,7 +25,6 @@ export class WineDetailsComponent {
         let id: string = String(params.get('id'));
         this.wineService.getWineById(id).subscribe(data => {
           this.wine = new Wine(data);
-          console.log(this.wine.photo)
         })
       }
     })

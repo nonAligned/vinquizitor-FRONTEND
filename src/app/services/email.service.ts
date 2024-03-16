@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-const BASE_URL = "http://localhost:5000/api";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +11,6 @@ export class EmailService {
   constructor(private http: HttpClient) { }
 
   sendEmail(emailData: any) {
-    return this.http.post(BASE_URL+"/mail/send", emailData, {observe:'response'});
+    return this.http.post(environment.apiKey + "/mail/send", emailData, {observe:'response'});
   }
 }
