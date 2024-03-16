@@ -23,6 +23,7 @@ export class WineDetailsComponent {
         let id: string = String(params.get('id'));
         this.wineService.getWineById(id).subscribe(data => {
           this.wine = new Wine(data);
+          console.log(this.wine.photo)
         })
       }
     })
