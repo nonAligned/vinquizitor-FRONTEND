@@ -2,11 +2,17 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { WineList } from 'src/app/models/wine-list.model';
 import { WineService } from '../wine.service';
 import { Subject, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs';
+import { fadeIn, fadeOut } from 'src/app/animations';
+
 
 @Component({
   selector: 'wine-wine-list',
   templateUrl: './wine-list.component.html',
-  styleUrls: ['./wine-list.component.scss']
+  styleUrls: ['./wine-list.component.scss'],
+  animations: [
+    fadeIn,
+    fadeOut
+  ]
 })
 export class WineListComponent implements OnInit, OnChanges {
   @Input() filter?: string;

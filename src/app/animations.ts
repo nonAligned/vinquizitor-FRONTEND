@@ -4,11 +4,11 @@ export const fadeAnimation =
   trigger('fade', [
     transition(':enter', [
       style({ opacity: 0, position: 'fixed', top: '50vh', left: '50vw', transform: 'translate(-50%, -50%)'}),
-      animate(200, style({ opacity: 1 }))
+      animate('200ms 250ms ease', style({ opacity: 1 }))
     ]),
     transition(':leave', [
       style({ opacity: 1, position: 'fixed', top: '50vh', left: '50vw', transform: 'translate(-50%, -50%)' }),
-      animate(200, style({ opacity: 0, position: 'fixed', top: '50vh', left: '50vw', transform: 'translate(-50%, -50%) scale(1.5)' }))
+      animate('200ms 0ms ease', style({ opacity: 0, position: 'fixed', top: '50vh', left: '50vw', transform: 'translate(-50%, -50%) scale(1.5)' }))
     ])
 ]);
 
@@ -315,3 +315,19 @@ export const slideInAnimation =
     //   ]),
     // ])
   ]);
+
+export const fadeIn =
+trigger('fadeIn', [
+  transition(':enter', [
+    style({ opacity: '0' }),
+    animate('600ms 200ms ease-out', style({ opacity: '1' })),
+  ]),
+])
+
+export const fadeOut = 
+trigger('fadeOut', [
+  transition(':leave', [
+    style({ opacity: '1' }),
+    animate('200ms 0ms ease-out', style({ opacity: '0' })),
+  ]),
+])

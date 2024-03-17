@@ -1,5 +1,5 @@
 <div class="container">
-    <wine-wine [wine]="wine" *ngFor="let wine of wines?.results"></wine-wine>
+    <wine-wine [wine]="wine" *ngFor="let wine of wines?.results" @fadeIn @fadeOut></wine-wine>
 </div>
 <div class="container-btn" *ngIf="isLoadMoreVisible">
     <button (click)="loadMore()">Load more</button>

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { QuizService } from 'src/app/services/quiz.service';
-import { trigger, style, animate, transition } from '@angular/animations';
 import { fadeAnimation } from 'src/app/animations';
 
 @Component({
