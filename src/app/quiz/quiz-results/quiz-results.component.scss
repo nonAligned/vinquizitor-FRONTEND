@@ -25,6 +25,7 @@
     width: 400px;
     overflow: hidden;
     box-shadow: 1px 1px 4px rgba(0,0,0, 0.15);
+    transition: all 500ms ease;
     &:hover {
         transform: scale(1.05);
         box-shadow: 2px 2px 16px rgba(0,0,0, 0.3);
@@ -46,6 +47,7 @@
             font-family: "Playfair Display", serif;
             font-style: italic;
             font-size: 2rem;
+            transition: color 500ms ease;
         }
     }
     div {
@@ -60,20 +62,25 @@
         background-color: $color-accent-purple;
         width: 100%;
         color: $color-white;
-        cursor: pointer;
+        transition: background-color 500ms ease;
+        &:hover {
+            cursor: pointer;
+            background-color: $color-accent-purple-light;
+        }
     }
 }
 
 .btn {
     border: none;
-    background-color: $color-black;
+    background-color: $color-accent-purple;
     color: $color-white;
     padding: 1rem 2rem;
     font-size: 1.1rem;
     border-radius: 2rem;
     font-weight: 700;
+    transition: background-color 500ms ease, transform 100ms ease;
     &:hover {
-        background-color: $color-accent-purple;
+        background-color: $color-accent-purple-light;
         cursor: pointer;
     }
     &:disabled {

@@ -39,6 +39,7 @@
         right: 9rem;
         margin-top: 1.25rem;
         color: $color-gray-dark;
+        transition: color 500ms ease;
         &:hover {
             color: $color-black;
             cursor: pointer;

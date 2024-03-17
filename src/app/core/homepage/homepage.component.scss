@@ -28,6 +28,7 @@
     .title {
         font-weight: normal;
         font-size: 5rem;
+        transition: transform 1000ms ease, color 500ms ease;
     }
 }
 
@@ -36,6 +37,7 @@ button {
     background-color: unset;
     font-size: 3rem;
     cursor: pointer;
+    transition: color 500ms ease;
     &:hover {
         color: $color-accent-purple;
     }
@@ -59,11 +61,13 @@ button {
         .title {
             font-size: 2.5rem;
             max-width: 200px;
+            transition: color 1000ms ease;
         }
     }
 
     button {
         font-size: 2rem;
+        transition: none;
     }
 }
 

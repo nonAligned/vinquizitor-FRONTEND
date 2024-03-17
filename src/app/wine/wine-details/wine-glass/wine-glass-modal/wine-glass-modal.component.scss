@@ -27,6 +27,7 @@
     overflow: hidden;
     fa-icon {
         align-self: flex-end;
+        transition: color 500ms ease;
         &:hover {
             cursor: pointer;
             color: $color-accent-purple;

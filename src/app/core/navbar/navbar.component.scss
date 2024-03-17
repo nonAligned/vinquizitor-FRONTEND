@@ -33,6 +33,7 @@
         flex-direction: row;
         gap: 1.5rem;
         li {
+            transition: transform 100ms ease;
             &:hover {
                 transform: scale(1.15);
             }
@@ -52,6 +53,7 @@
     width: max-content;
     padding-right: 3rem;
     padding-left: 3rem;
+    transition: all 100ms ease;
 }
 
 #btn-navbar-collapse {

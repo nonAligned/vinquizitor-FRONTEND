@@ -56,6 +56,7 @@ section {
             font-size: 1.1rem;
             border-radius: 0.5rem;
             border: none;
+            transition: background-color 500ms ease;
             &:hover {
                 background-color: $color-accent-purple-light;
                 cursor: pointer;
@@ -91,6 +92,8 @@ section {
 
 .contact-info-link {
     font-size: 6rem;
+    transition: color 500ms ease;
+    color: $color-gray-dark;
     &:hover {
         color: $color-accent-purple;
     }

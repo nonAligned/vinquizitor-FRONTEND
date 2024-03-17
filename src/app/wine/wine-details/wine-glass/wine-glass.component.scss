@@ -8,6 +8,7 @@
     max-width: 900px;
     svg {
         flex-basis: 150px;
+        transition: transform 500ms ease;
         &:hover {
             transform: scale(1.2);
             cursor: pointer;

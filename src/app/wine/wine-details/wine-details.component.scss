@@ -102,6 +102,11 @@ section {
 .btn-shortcut {
     border: none;
     background-color: initial;
+    transition: all 500ms ease;
+    color: $color-gray-dark;
+    fa-icon {
+        transition: all 100ms ease;
+    }
     &:hover {
         background: linear-gradient(0deg, rgba(0,0,0, 0.6), (5%, rgba(255,255,255, 0.0)));
         color: $color-accent-purple;
