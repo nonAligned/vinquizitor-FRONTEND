@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment.development';
   styleUrls: ['./wine-details.component.scss']
 })
 export class WineDetailsComponent {
-  wine: Wine | undefined;
+  wine?: Wine;
   arrowDown = faChevronDown;
   api = environment.apiKey;
 

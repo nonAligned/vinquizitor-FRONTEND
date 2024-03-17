@@ -66,7 +66,7 @@
             </div>
             <div class="info-box" id="wine-glass">
                 <h2 class="subheading">Which Glass?</h2>
-                <wine-wine-glass [activeGlass]="wine?.glass_serving || 'universal'"></wine-wine-glass>
+                <wine-wine-glass *ngIf="wine" [activeGlass]="wine.glass_serving"></wine-wine-glass>
             </div>
         </div>
     </section>

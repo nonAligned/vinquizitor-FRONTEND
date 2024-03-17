@@ -1,33 +1,86 @@
+@import '../../../../../assets/styles/vars';
+
 .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #fff, $alpha: 0.75);
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+#content {
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 2px 2px 16px rgba($color: #000000, $alpha: 0.25);
+    display: flex;
     flex-direction: column;
-    height: 100%;
-    overflow-y: scroll;
-    &::-webkit-scrollbar {
-        display: none;
+    gap: 1rem;
+    overflow: hidden;
+    fa-icon {
+        align-self: flex-end;
+        &:hover {
+            cursor: pointer;
+            color: $color-accent-purple;
+        }
     }
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 3rem;
+        text-align: center;
+        font-size: 2rem;
+        font-family: "Playfair display", serif;
         font-style: italic;
     }
-    
-    p {
-        font-size: 1.2rem;
-        text-align: justify;
+    #inner-content {
+        display: flex;
+        // align-items: center;
+        flex-basis: 1 1 auto;
+        gap: 2rem;
+        padding: 1rem 2rem;
+        overflow: hidden;
+        #description {
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 479px) {
     .container {
+        padding: 1.5rem;
+    }
+    #content {
         h1 {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
-        p {
-            font-size: 1.1rem;
+        #inner-content {
+            padding: 0rem;
+            gap: 1rem;
+            flex-direction: column;
+            overflow: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            img {
+                height: 200px;
+            }
+            #description {
+                overflow: visible;
+                text-align: center;
+            }
         }
     }
 }

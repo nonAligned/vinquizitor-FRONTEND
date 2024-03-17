@@ -1,29 +1,33 @@
-import { Component, Input } from '@angular/core';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import { Component, Input, OnInit } from '@angular/core';
+import { WineService } from '../../wine.service';
+import { Glass } from 'src/app/models/glass.model';
 
 @Component({
   selector: 'wine-wine-glass',
   templateUrl: './wine-glass.component.html',
   styleUrls: ['./wine-glass.component.scss']
 })
-export class WineGlassComponent {
-  @Input() activeGlass: string = "";
+export class WineGlassComponent implements OnInit {
+  @Input() activeGlass?: string;
+  glass?: Glass;
   isModalActive: boolean = false;
-  exitButton = faX;
-  glassType: string = "";
+
+  constructor(private wineService: WineService) { }
+
+  ngOnInit(): void {
+    this.wineService.getGlassByType(this.activeGlass!).subscribe(data => {
+      this.glass = data;
+    });
+  }
   
-  openCloseModal(glassType?: string): void {
-    
-    if(glassType) {
-      if (this.activeGlass === glassType) {
-        this.glassType = glassType;
+  openCloseModal(action: string, type?: string): void {
+    if (action === "open") {
+      console.log(this.activeGlass, type)
+      if (type && (type === this.activeGlass || type === "universal")) {
         this.isModalActive = true;
       }
-    } else {
-      this.glassType = "";
-      this.isModalActive = false;
+    } else if (action === "close") {
+      this.isModalActive = false
     }
-    
-    // this.isModalActive = !this.isModalActive;
   }
 }

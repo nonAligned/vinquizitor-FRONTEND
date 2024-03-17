@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { WineList } from '../models/wine-list.model';
 import { Wine } from '../models/wine.model';
 import { environment } from 'src/environments/environment';
+import { Glass } from '../models/glass.model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +37,12 @@ export class WineService {
   getWineById(id: string): Observable<Wine> {
     return this.http.get(environment.apiKey + "/varieties/find/" + id).pipe(map(data => {
       return new Wine(data);
+    }));
+  }
+
+  getGlassByType(type: string): Observable<Glass> {
+    return this.http.get(environment.apiKey + "/glasses/type/" + type).pipe(map(data => {
+      return new Glass(data);
     }));
   }
 }
