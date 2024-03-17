@@ -8,13 +8,13 @@ import { QuizComponent } from './quiz/quiz/quiz.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path: "home", component: HomepageComponent},
-  {path: "contact", component: ContactComponent},
-  {path: "search", component: SearchComponent},
-  {path: "search/:id", component: WineDetailsComponent},
-  {path: "quiz", component: QuizComponent},
+  {path: "home", component: HomepageComponent, data: {animation:  "Homepage"}},
+  {path: "contact", component: ContactComponent, data: {animation:  "Contact"}},
+  {path: "search", component: SearchComponent, data: {animation:  "Search"}},
+  {path: "search/:id", component: WineDetailsComponent, data: {animation:  "WineDetails"}},
+  {path: "quiz", component: QuizComponent, data: {animation:  "Quiz"}},
   {path: "", redirectTo: "/home", pathMatch: "full"},
-  {path: "**", pathMatch: "full", component: PageNotFoundComponent}
+  {path: "**", pathMatch: "full", component: PageNotFoundComponent, data: {animation:  "PageNotFound"}}
 ];
 
 @NgModule({

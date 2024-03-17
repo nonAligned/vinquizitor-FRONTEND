@@ -2,11 +2,24 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { QuizService } from 'src/app/services/quiz.service';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'wine-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss']
+  styleUrls: ['./homepage.component.scss'],
+  animations: [
+    trigger('fade', [
+      transition(':enter', [
+        style({ opacity: 0, position: 'fixed', top: '50vh', left: '50vw', transform: 'translate(-50%, -50%)'}),
+        animate(200, style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        style({ opacity: 1, position: 'fixed', top: '50vh', left: '50vw', transform: 'translate(-50%, -50%)' }),
+        animate(200, style({ opacity: 0, position: 'fixed', top: '50vh', left: '50vw', transform: 'translate(-50%, -50%) scale(1.5)' }))
+      ])
+    ])
+  ]
 })
 export class HomepageComponent {
   buttonLeft = faChevronLeft;

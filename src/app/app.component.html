@@ -1,6 +1,6 @@
 <header>
     <wine-navbar></wine-navbar>
 </header>
-<main>
+<main [@routeAnimations]="getRouteAnimationData()">
     <router-outlet (activate)="onRouterActivate()" id="router"></router-outlet>
 </main>
