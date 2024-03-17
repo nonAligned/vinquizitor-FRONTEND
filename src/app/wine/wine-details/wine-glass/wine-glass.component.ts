@@ -22,7 +22,6 @@ export class WineGlassComponent implements OnInit {
   
   openCloseModal(action: string, type?: string): void {
     if (action === "open") {
-      console.log(this.activeGlass, type)
       if (type && (type === this.activeGlass || type === "universal")) {
         this.isModalActive = true;
       }
