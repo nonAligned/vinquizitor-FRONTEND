@@ -3,7 +3,7 @@ import { Wine } from 'src/app/models/wine.model';
 import { WineService } from '../wine.service';
 import { ActivatedRoute } from '@angular/router';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'wine-wine-details',
