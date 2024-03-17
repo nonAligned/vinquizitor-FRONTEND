@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiKey: process.env["API_KEY_DEV"]
+    apiKey: 'http://localhost:5000/api'
 };

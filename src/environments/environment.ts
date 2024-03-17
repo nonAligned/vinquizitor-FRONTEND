@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiKey: process.env["API_KEY_PROD"]
+    apiKey: 'https://vinquizitor-app.onrender.com/api'
 };
