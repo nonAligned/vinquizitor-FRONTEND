@@ -1,3 +1,5 @@
+@import '../assets/styles/vars';
+
 header {
     position: fixed;
     top: 0;
@@ -13,8 +15,42 @@ router-outlet {
     height: 100%;
 }
 
+.info-box {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 1rem 7rem;
+    z-index: 1001;
+    background-color: $color-gray-light;
+    color: $color-black;
+    justify-content: space-between;
+    gap: 2rem;
+
+    p {
+        flex-grow: 1;
+        flex-basis: auto;
+        text-align: center;
+    }
+
+    button {
+        border: none;
+        background-color: initial;
+        flex-grow: 0;
+        &:hover {
+            color: $color-accent-purple;
+            cursor: pointer;
+        }
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     header {
         position: relative;
+    }
+
+    .info-box {
+    padding: 1rem 2rem;
     }
 }

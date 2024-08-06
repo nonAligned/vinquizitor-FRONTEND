@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
 import { slideInAnimation } from './animations';
+import { faX } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'wine-root',
@@ -10,8 +11,10 @@ import { slideInAnimation } from './animations';
     slideInAnimation
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'vinquizitor';
+  isInfoBoxVisible: boolean = true;
+  closeButton = faX;
 
   constructor(private contexts: ChildrenOutletContexts) { }
 
@@ -21,5 +24,16 @@ export class AppComponent {
 
   getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+  }
+
+  ngOnInit() {
+    if (window.sessionStorage.getItem("alreadyVisited")) {
+      this.isInfoBoxVisible = false;
+    }
+  }
+
+  closeInfoBox() {
+    this.isInfoBoxVisible = false;
+    window.sessionStorage.setItem("alreadyVisited", "true");
   }
 }

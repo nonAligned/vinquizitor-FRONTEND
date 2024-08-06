@@ -1,3 +1,7 @@
+<div class="info-box" *ngIf="isInfoBoxVisible">
+    <p>The app is currently hosted on a free instance, which spins down after a period of inactivity. Please allow a few moments after accessing Quiz and Search pages.</p>
+    <button type="button"><fa-icon [icon]="closeButton" (click)="closeInfoBox()"></fa-icon></button>
+</div>
 <header>
     <wine-navbar></wine-navbar>
 </header>
